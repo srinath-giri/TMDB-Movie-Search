@@ -158,6 +158,7 @@ extension MovieSearchViewController: UISearchBarDelegate {
     
     guard !searchText.isEmpty else {
       self.movies.removeAll()
+      self.bannerLabel.isHidden = true
       self.updateUi()
       return
     }
@@ -167,6 +168,7 @@ extension MovieSearchViewController: UISearchBarDelegate {
       DispatchQueue.main.async {
           if let error = error {
             self.bannerLabel.text = error.localizedDescription
+            self.bannerLabel.isHidden = false
             return
           }
 
@@ -175,7 +177,15 @@ extension MovieSearchViewController: UISearchBarDelegate {
           if let movieSearchResult = movieSearchResult {
             self.movieSearchResultLastFetched = movieSearchResult
             self.movies.append(contentsOf: movieSearchResult.results)
-            self.bannerLabel.text =  (movieSearchResult.total_results == 0) ? "No matching results!" : ""
+            
+            if movieSearchResult.total_results == 0 {
+              self.bannerLabel.text = "No matching results!"
+              self.bannerLabel.isHidden = false
+            } else {
+              self.bannerLabel.text = ""
+              self.bannerLabel.isHidden = true
+            }
+            
           }
 
           self.updateUi()

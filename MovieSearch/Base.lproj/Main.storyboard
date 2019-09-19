@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="I4i-Rv-CW3">
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Type a movie title to search" translatesAutoresizingMaskIntoConstraints="NO" id="I4i-Rv-CW3">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -26,19 +26,18 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgS-b8-xsE">
+                                <rect key="frame" x="0.0" y="108" width="414" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="et4-AD-rfC">
-                                <rect key="frame" x="0.0" y="110" width="414" height="766"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="758"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="GgS-b8-xsE">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieResultCell" rowHeight="310" id="nPX-0Y-UoJ" customClass="MovieSearchResultTableViewCell" customModule="MovieSearch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="310"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="310"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nPX-0Y-UoJ" id="9Vu-GO-l8E">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
@@ -119,12 +118,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="I4i-Rv-CW3" firstAttribute="leading" secondItem="MeG-eQ-xti" secondAttribute="leading" id="9h4-jc-PqX"/>
-                            <constraint firstItem="et4-AD-rfC" firstAttribute="top" secondItem="I4i-Rv-CW3" secondAttribute="bottom" constant="10" id="FgG-yS-TuS"/>
+                            <constraint firstItem="GgS-b8-xsE" firstAttribute="top" secondItem="I4i-Rv-CW3" secondAttribute="bottom" constant="8" id="BM3-ci-k5l"/>
                             <constraint firstItem="MeG-eQ-xti" firstAttribute="top" secondItem="I4i-Rv-CW3" secondAttribute="top" id="GKB-15-bAb"/>
                             <constraint firstAttribute="bottom" secondItem="et4-AD-rfC" secondAttribute="bottom" constant="20" id="Gqh-jN-MEq"/>
                             <constraint firstItem="et4-AD-rfC" firstAttribute="leading" secondItem="HbB-QZ-PRB" secondAttribute="leading" id="OfC-Pr-hEC"/>
+                            <constraint firstItem="et4-AD-rfC" firstAttribute="top" secondItem="GgS-b8-xsE" secondAttribute="bottom" constant="10" id="ZFv-nd-v5B"/>
+                            <constraint firstItem="GgS-b8-xsE" firstAttribute="leading" secondItem="MeG-eQ-xti" secondAttribute="leading" id="hUv-ne-V73"/>
                             <constraint firstAttribute="trailing" secondItem="et4-AD-rfC" secondAttribute="trailing" id="qsr-Ne-A5s"/>
                             <constraint firstItem="MeG-eQ-xti" firstAttribute="trailing" secondItem="I4i-Rv-CW3" secondAttribute="trailing" id="t5P-55-U9Z"/>
+                            <constraint firstItem="MeG-eQ-xti" firstAttribute="trailing" secondItem="GgS-b8-xsE" secondAttribute="trailing" id="tsn-Vb-t4x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MeG-eQ-xti"/>
                     </view>
